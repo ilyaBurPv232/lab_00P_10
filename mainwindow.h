@@ -2,6 +2,11 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QDir>
+#include <QPixmap>
+#include <QSettings>
+#include <QCoreApplication>
+#include "smart_ptr.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -17,7 +22,17 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+private slots:
+    void on_pushButton_clicked();
+    void on_comboBox_currentIndexChanged(int index);
+
 private:
     Ui::MainWindow *ui;
+    QString currentFolderPath;
+    SmartPtr<QSettings> settings;
+
+    QString getConfigPath();
+    void loadLastFolder();
+    void saveLastFolder();
 };
 #endif // MAINWINDOW_H
