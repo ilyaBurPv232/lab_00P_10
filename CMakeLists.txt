@@ -26,6 +26,7 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
     qt_add_executable(oop_lab_10
         MANUAL_FINALIZATION
         ${PROJECT_SOURCES}
+        smart_ptr.h
     )
 # Define target properties for Android with Qt 6 as:
 #    set_property(TARGET oop_lab_10 APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR
